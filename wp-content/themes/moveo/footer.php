@@ -1,14 +1,9 @@
     </div><!-- #main -->
- 
-    <div id="footer">
-        <div id="colophon">
- 
-            <div id="site-info">
-				
-            </div><!-- #site-info -->
- 
-        </div><!-- #colophon -->
-    </div><!-- #footer -->
+    <footer>
+   				<div class="warp">
+   						MOVEO - Tous droits réservés
+   				</div>
+   		</footer>
 </div><!-- #wrapper -->
 <?php wp_footer(); ?>
 </body>

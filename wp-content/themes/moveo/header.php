@@ -22,7 +22,7 @@
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 </head>
 <body>
-<div id="wrapper" class="hfeed">
+<div>
     <header>
 		<div class="ban">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo">
@@ -30,16 +30,10 @@
 			</a><br />
 		</div>
 	</header>
-    <!-- <div id="header">
-        <div id="masthead">
-
-            <div id="access">
-				<!--<div class="skip-link"><a href="#content" title="<?php _e( 'Skip to content', 'hbd-theme' ) ?>"><?php _e( 'Skip to content', 'hbd-theme' ) ?></a></div>-->
-				<?php #wp_page_menu( 'sort_column=menu_order' ); ?>
-				<?php wp_nav_menu( array( 'sort_column' => 'menu_order', 'container_class' => 'menu-header' ) ); ?>
-            </div><!-- #access -->
-
-        </div><!-- #masthead -->
-    </div><!-- #header -->
+    <div id="navigation">
+        <nav>
+            <?php wp_nav_menu( array( 'sort_column' => 'menu_order') ); ?>
+        </nav>
+    </div>
 
     <div class="wrap">
