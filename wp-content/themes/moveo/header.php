@@ -25,12 +25,12 @@
 <div id="wrapper" class="hfeed">
     <header>
 		<div class="ban">
-			<a href="<?php show::siteUrl(); ?>/" class="logo">
-				<img src="theme/<?php show::theme("[id]"); ?>/images/logo.png" alt="Logo Image">
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Logo Image">
 			</a><br />
 		</div>
 	</header>
-    <div id="header">
+    <!-- <div id="header">
         <div id="masthead">
 
             <div id="access">
@@ -42,4 +42,4 @@
         </div><!-- #masthead -->
     </div><!-- #header -->
 
-    <div id="main">
+    <div class="wrap">
