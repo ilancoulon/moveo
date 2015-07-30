@@ -1,7 +1,12 @@
-Options -Indexes
-Options +FollowSymlinks
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /moveo/
-RewriteRule ^admin/$  admin/ [L]
-RewriteRule ^([a-z]+)/([a-z-0-9,]+).html$  index.php?p=$1&param=$2 [L]
-RewriteRule ^([a-z]+)/$  index.php?p=$1 [L]
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /moveo/index.php [L]
+</IfModule>
+
+# END WordPress
