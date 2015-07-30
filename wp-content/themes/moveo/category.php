@@ -5,15 +5,8 @@
  
                 <?php the_post(); ?>          
 
-				<?php if ( is_day() ) : ?>
-				                <h1 class="page-title"><?php printf( __( 'Daily Archives: <span>%s</span>', 'hbd-theme' ), get_the_time(get_option('date_format')) ) ?></h1>
-				<?php elseif ( is_month() ) : ?>
-				                <h1 class="page-title"><?php printf( __( 'Monthly Archives: <span>%s</span>', 'hbd-theme' ), get_the_time('F Y') ) ?></h1>
-				<?php elseif ( is_year() ) : ?>
-				                <h1 class="page-title"><?php printf( __( 'Yearly Archives: <span>%s</span>', 'hbd-theme' ), get_the_time('Y') ) ?></h1>
-				<?php elseif ( isset($_GET['paged']) && !empty($_GET['paged']) ) : ?>
-				                <h1 class="page-title"><?php _e( 'Blog Archives', 'hbd-theme' ) ?></h1>
-				<?php endif; ?>
+				<h1 class="page-title"><?php _e( 'Category Archives:', 'hbd-theme' ) ?> <span><?php single_cat_title() ?></span></span></h1>
+				<?php $categorydesc = category_description(); if ( !empty($categorydesc) ) echo apply_filters( 'archive_meta', '<div class="archive-meta">' . $categorydesc . '</div>' ); ?>
 
 				<?php rewind_posts(); ?>
 
@@ -43,7 +36,10 @@
 				                    </div><!-- .entry-summary -->
 
 				                    <div class="entry-utility">
-				                        <span class="cat-links"><span class="entry-utility-prep entry-utility-prep-cat-links"><?php _e( 'Posted in ', 'hbd-theme' ); ?></span><?php echo get_the_category_list(', '); ?></span>
+				                        <?php if ( $cats_meow = cats_meow(', ') ) : // Returns categories other than the one queried ?>
+										                        <span class="cat-links"><?php printf( __( 'Also posted in %s', 'hbd-theme' ), $cats_meow ) ?></span>
+										                        <span class="meta-sep"> | </span>
+										<?php endif ?>
 				                        <span class="meta-sep"> | </span>
 				                        <?php the_tags( '<span class="tag-links"><span class="entry-utility-prep entry-utility-prep-tag-links">' . __('Tagged ', 'hbd-theme' ) . '</span>', ", ", "</span>\n\t\t\t\t\t\t<span class=\"meta-sep\">|</span>\n" ) ?>
 				                        <span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'hbd-theme' ), __( '1 Comment', 'hbd-theme' ), __( '% Comments', 'hbd-theme' ) ) ?></span>

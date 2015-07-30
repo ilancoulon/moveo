@@ -1,30 +1,7 @@
-<?php
-/**
- * The template for displaying 404 pages (not found)
- *
- * @package WordPress
- * @subpackage Twenty_Fifteen
- * @since Twenty Fifteen 1.0
- */
-
-get_header(); ?>
-
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'twentyfifteen' ); ?></h1>
-				</header><!-- .page-header -->
-
-				<div class="page-content">
-					<p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'twentyfifteen' ); ?></p>
-
-					<?php get_search_form(); ?>
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
-
-		</main><!-- .site-main -->
-	</div><!-- .content-area -->
-
-<?php get_footer(); ?>
+<div id="post-0" class="post error404 not-found">
+	<h1 class="entry-title"><?php _e( 'Not Found', 'hbd-theme' ); ?></h1>
+	<div class="entry-content">
+		<p><?php _e( 'Whoah! You are trying to access some crazy crap right now.  You know, that kind that <em>does not exist</em>.  So stop, take a deep breath, and think a little.  Maybe you can find what you want by searching.  Maybe you made a typo.  As a humble 404 Not Found page, there is only so much I can know.  But I wish you the best of luck at finding the thing you are looking for, whomever you are.', 'hbd-theme' ); ?></p>
+		<?php get_search_form(); ?>
+	</div><!-- .entry-content -->
+</div><!-- #post-0 -->

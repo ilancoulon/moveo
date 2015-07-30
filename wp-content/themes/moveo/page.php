@@ -1,38 +1,23 @@
-<?php
-/**
- * The template for displaying pages
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages and that
- * other "pages" on your WordPress site will use a different template.
- *
- * @package WordPress
- * @subpackage Twenty_Fifteen
- * @since Twenty Fifteen 1.0
- */
-
-get_header(); ?>
-
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-
-		<?php
-		// Start the loop.
-		while ( have_posts() ) : the_post();
-
-			// Include the page content template.
-			get_template_part( 'content', 'page' );
-
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-
-		// End the loop.
-		endwhile;
-		?>
-
-		</main><!-- .site-main -->
-	</div><!-- .content-area -->
-
+<?php get_header(); ?>
+ 
+        <div id="container">
+            <div id="content">
+ 
+<?php the_post(); ?>
+ 
+                <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                    <h1 class="entry-title"><?php the_title(); ?></h1>
+                    <div class="entry-content">
+<?php the_content(); ?>
+<?php wp_link_pages('before=<div class="page-link">' . __( 'Pages:', 'your-theme' ) . '&after=</div>') ?>
+<?php edit_post_link( __( 'Edit', 'your-theme' ), '<span class="edit-link">', '</span>' ) ?>
+                    </div><!-- .entry-content -->
+                </div><!-- #post-<?php the_ID(); ?> -->           
+ 
+<?php if ( get_post_custom_values('comments') ) comments_template() // Add a custom field with Name and Value of "comments" to enable comments on this page ?>            
+ 
+            </div><!-- #content -->
+			<?php get_sidebar(); ?>
+        </div><!-- #container -->
+ 
 <?php get_footer(); ?>

@@ -5,15 +5,7 @@
  
                 <?php the_post(); ?>          
 
-				<?php if ( is_day() ) : ?>
-				                <h1 class="page-title"><?php printf( __( 'Daily Archives: <span>%s</span>', 'hbd-theme' ), get_the_time(get_option('date_format')) ) ?></h1>
-				<?php elseif ( is_month() ) : ?>
-				                <h1 class="page-title"><?php printf( __( 'Monthly Archives: <span>%s</span>', 'hbd-theme' ), get_the_time('F Y') ) ?></h1>
-				<?php elseif ( is_year() ) : ?>
-				                <h1 class="page-title"><?php printf( __( 'Yearly Archives: <span>%s</span>', 'hbd-theme' ), get_the_time('Y') ) ?></h1>
-				<?php elseif ( isset($_GET['paged']) && !empty($_GET['paged']) ) : ?>
-				                <h1 class="page-title"><?php _e( 'Blog Archives', 'hbd-theme' ) ?></h1>
-				<?php endif; ?>
+				<h1 class="page-title"><?php _e( 'Tag Archives:', 'hbd-theme' ) ?> <span><?php single_tag_title() ?></span></h1>
 
 				<?php rewind_posts(); ?>
 
@@ -45,7 +37,9 @@
 				                    <div class="entry-utility">
 				                        <span class="cat-links"><span class="entry-utility-prep entry-utility-prep-cat-links"><?php _e( 'Posted in ', 'hbd-theme' ); ?></span><?php echo get_the_category_list(', '); ?></span>
 				                        <span class="meta-sep"> | </span>
-				                        <?php the_tags( '<span class="tag-links"><span class="entry-utility-prep entry-utility-prep-tag-links">' . __('Tagged ', 'hbd-theme' ) . '</span>', ", ", "</span>\n\t\t\t\t\t\t<span class=\"meta-sep\">|</span>\n" ) ?>
+				                        <?php if ( $tag_ur_it = tag_ur_it(', ') ) : // Returns tags other than the one queried ?>
+										                        <span class="tag-links"><?php printf( __( 'Also tagged %s', 'hbd-theme' ), $tag_ur_it ) ?></span>
+										<?php endif; ?>
 				                        <span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'hbd-theme' ), __( '1 Comment', 'hbd-theme' ), __( '% Comments', 'hbd-theme' ) ) ?></span>
 				                        <?php edit_post_link( __( 'Edit', 'hbd-theme' ), "<span class=\"meta-sep\">|</span>\n\t\t\t\t\t\t<span class=\"edit-link\">", "</span>\n\t\t\t\t\t\n" ) ?>
 				                    </div><!-- #entry-utility -->
@@ -61,7 +55,7 @@
 				<?php } ?>                 
  
             </div><!-- #content -->
+			<?php get_sidebar(); ?>
         </div><!-- #container -->
- 
-<?php get_sidebar(); ?>
+
 <?php get_footer(); ?>

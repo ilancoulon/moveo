@@ -5,15 +5,8 @@
  
                 <?php the_post(); ?>          
 
-				<?php if ( is_day() ) : ?>
-				                <h1 class="page-title"><?php printf( __( 'Daily Archives: <span>%s</span>', 'hbd-theme' ), get_the_time(get_option('date_format')) ) ?></h1>
-				<?php elseif ( is_month() ) : ?>
-				                <h1 class="page-title"><?php printf( __( 'Monthly Archives: <span>%s</span>', 'hbd-theme' ), get_the_time('F Y') ) ?></h1>
-				<?php elseif ( is_year() ) : ?>
-				                <h1 class="page-title"><?php printf( __( 'Yearly Archives: <span>%s</span>', 'hbd-theme' ), get_the_time('Y') ) ?></h1>
-				<?php elseif ( isset($_GET['paged']) && !empty($_GET['paged']) ) : ?>
-				                <h1 class="page-title"><?php _e( 'Blog Archives', 'hbd-theme' ) ?></h1>
-				<?php endif; ?>
+				<h1 class="page-title author"><?php printf( __( 'Author Archives: <span class="vcard">%s</span>', 'hbd-theme' ), "<a class='url fn n' href='$authordata->user_url' title='$authordata->display_name' rel='me'>$authordata->display_name</a>" ) ?></h1>
+				<?php $authordesc = $authordata->user_description; if ( !empty($authordesc) ) echo apply_filters( 'archive_meta', '<div class="archive-meta">' . $authordesc . '</div>' ); ?>
 
 				<?php rewind_posts(); ?>
 
@@ -55,13 +48,12 @@
 
 				<?php global $wp_query; $total_pages = $wp_query->max_num_pages; if ( $total_pages > 1 ) { ?>
 				                <div id="nav-below" class="navigation">
-				                    <div class="nav-previous"><?php next_posts_link(__( '<span class="meta-nav">&laquo;</span> Older posts', 'hbd-theme' )) ?></div>
-				                    <div class="nav-next"><?php previous_posts_link(__( 'Newer posts <span class="meta-nav">&raquo;</span>', 'hbd-theme' )) ?></div>
-				                </div><!-- #nav-below -->
+										<?php previous_post_link( '%link', '<span class="meta-nav">&laquo;</span> %title' ) ?> <span style="color: #bbb;">&#8226;</span> <?php next_post_link( '%link', '%title <span class="meta-nav">&raquo;</span>' ) ?>
+								</div><!-- #nav-below -->
 				<?php } ?>                 
  
             </div><!-- #content -->
+			<?php get_sidebar(); ?>
         </div><!-- #container -->
  
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
