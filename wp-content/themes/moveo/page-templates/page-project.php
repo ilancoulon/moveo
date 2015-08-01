@@ -14,7 +14,7 @@ $post = get_post();
 ?>
 <div class="page <?php echo $post->post_name; ?>" <?php post_class(); ?>>
     <div class="wrap main">
-        <img src="http://localhost/moveo/wp-content/uploads/2015/07/radio.jpg" alt="__pages.realite_augmentee.gopro" class="projet" />
+        <img src="<?php echo get_post_meta($post->ID, 'image_bordure_url', true); ?>" class="projet" />
         <div class="description">
             <?php the_content(); ?>
         </div>
