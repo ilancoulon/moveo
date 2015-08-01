@@ -35,5 +35,3 @@
             <?php wp_nav_menu( array( 'sort_column' => 'menu_order') ); ?>
         </nav>
     </div>
-
-    <div class="wrap">

@@ -1,10 +1,9 @@
-    </div><!-- #main -->
-    <footer>
-   				<div class="warp">
-   						MOVEO - Tous droits réservés
-   				</div>
-   		</footer>
-</div><!-- #wrapper -->
-<?php wp_footer(); ?>
-</body>
+
+        <footer>
+            <div class="warp">
+                MOVEO - Tous droits réservés
+            </div>
+        </footer>
+        <?php wp_footer(); ?>
+    </body>
 </html>

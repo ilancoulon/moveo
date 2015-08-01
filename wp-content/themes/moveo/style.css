@@ -1,3 +1,9 @@
+/*
+Theme Name: Moveo Theme
+Author: Ilan Coulon
+Description: Theme for Moveo Foundation
+*/
+
 /* GENERAL */
 @font-face {
     font-family: 'Champagne&LimousinesBold';
@@ -209,7 +215,7 @@ nav li ul li a:hover {
         clip: rect(250px, 700px, 400px, auto); /* rect(haut, droite, bas, gauche) */
         top: -220px;
     }
-    .realite_augmentee img.projet {
+    .realite-augmentee img.projet {
         display:block;
         position: absolute;
         float: left;
@@ -226,15 +232,29 @@ nav li ul li a:hover {
         width: 1000px;
     }
     .page img.projet {
-        display:block;
-        position: absolute;
-        float: left;
+        display: block;
         clip: rect(0, 555px, 720px, 207px); /* rect(haut, droite, bas, gauche) */
         top: 40px;
         left: -155px;
     }
+    .page .wrap.main::before {
+        content: "";
+        float: left;
+        display:block;
+        width: 350px;
+        height: 720px;
+        margin-right: 50px;
+    }
+    .page .description h2 {
+        overflow: hidden;
+    }
     .page .description {
         min-height: 700px;
+    }
+    .page .description iframe {
+        display: block;
+        margin: 80px auto;
+        width: 640px;
     }
     .presse img.projet {
         clip: rect(0px, 468px, 500px, 120px);
@@ -276,7 +296,7 @@ nav li ul li a:hover {
     .missions .description {
         min-height: 640px;
     }
-    .realite_augmentee img.projet {
+    .realite-augmentee img.projet {
         display:block;
         position: absolute;
         float: left;
@@ -284,11 +304,11 @@ nav li ul li a:hover {
         top: 20px;
         left: 0;
     }
-    .realite_augmentee .description {
+    .realite-augmentee .description {
         min-height: 600px;
     }
     .page .description {
-        padding-left: 400px;
+        /*padding-left: 400px;*/
         margin-top: 10px;
     }
     .page .description h2 {
