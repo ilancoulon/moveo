@@ -85,5 +85,7 @@ define('WP_DEBUG', false);
 if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
 
+define( 'WPCF7_AUTOP', false );
+
 /** Réglage des variables de WordPress et de ses fichiers inclus. */
 require_once(ABSPATH . 'wp-settings.php');
