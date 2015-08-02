@@ -118,6 +118,14 @@ nav li.don a:hover{
     text-decoration: underline;
     border-bottom: 0px;
 }
+nav li#menu-item-5 a {
+    text-indent: -9000px;
+    background-image: url('img/home.png');
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 19px;
+    vertical-align: middle;
+}
 ul {
     padding-left: 0;
     margin-bottom: 0;
@@ -169,7 +177,7 @@ nav li ul li a {
     text-transform: uppercase;
     border-left: 1px solid #cccccc;
 }
-nav li ul li.first a {
+nav li ul li:first-child a {
     border-left: none;
 }
 nav li ul li a:hover {
@@ -237,12 +245,12 @@ nav li ul li a:hover {
         top: 40px;
         left: -155px;
     }
-    .page .wrap.main::before {
+    .page .wrap.main.containsBorderImage::before {
         content: "";
         float: left;
         display:block;
         width: 350px;
-        height: 720px;
+        height: 740px;
         margin-right: 50px;
     }
     .page .description h2 {
@@ -278,7 +286,7 @@ nav li ul li a:hover {
         display:block;
         position: absolute;
         float: left;
-        clip: rect(0px, 448px, 775px, 100px); /* rect(haut, droite, bas, gauche) */
+        clip: rect(0px, 448px, 720px, 100px); /* rect(haut, droite, bas, gauche) */
         top: 40px;
         left: -50px;
     }
@@ -289,7 +297,7 @@ nav li ul li a:hover {
         display:block;
         position: absolute;
         float: left;
-        clip: rect(0px, 448px, 660px, 100px); /* rect(haut, droite, bas, gauche) */
+        clip: rect(0px, 448px, 680px, 100px); /* rect(haut, droite, bas, gauche) */
         top: 40px;
         left: -50px;
     }
@@ -377,7 +385,7 @@ a.more {
     color: #fc5964;
     background-repeat: no-repeat;
     background-position: left;
-    background-image: url('../images/fleche.png');
+    background-image: url('img/fleche.png');
     padding-left: 20px;
 }
 

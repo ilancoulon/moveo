@@ -1,23 +1,13 @@
 <?php get_header(); ?>
 
-        <div id="container">
-            <div id="content">
-
-<?php the_post(); ?>
-
-                <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                    
-                    <div class="entry-content">
-<?php the_content(); ?>
-<?php wp_link_pages('before=<div class="page-link">' . __( 'Pages:', 'your-theme' ) . '&after=</div>') ?>
-<?php edit_post_link( __( 'Edit', 'your-theme' ), '<span class="edit-link">', '</span>' ) ?>
-                    </div><!-- .entry-content -->
-                </div><!-- #post-<?php the_ID(); ?> -->
-
-<?php if ( get_post_custom_values('comments') ) comments_template() // Add a custom field with Name and Value of "comments" to enable comments on this page ?>
-
-            </div><!-- #content -->
-			<?php get_sidebar(); ?>
-        </div><!-- #container -->
+<?php the_post(); $post = get_post(); $imgUrl = get_post_meta($post->ID, 'image_bordure_url', true); ?>
+<div class="page <?php echo $post->post_name; ?>" <?php post_class(); ?>>
+    <div class="wrap main<?php if ($imgUrl != "") { echo " containsBorderImage"; } ?>">
+        <?php if ($imgUrl != "") { ?><img src="<?php echo $imgUrl ?>" class="projet" /><?php } ?>
+        <div class="description">
+            <?php the_content(); ?>
+        </div>
+    </div>
+</div>
 
 <?php get_footer(); ?>
