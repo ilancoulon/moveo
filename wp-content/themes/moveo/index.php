@@ -1,60 +1,75 @@
-<?php get_header(); ?>
-<div id="container">
- 
-    <div id="content">
-		<?php /* Top post navigation */ ?>
-		<?php global $wp_query; $total_pages = $wp_query->max_num_pages; if ( $total_pages > 1 ) { ?>
+<?php
+/**
+* Template Name: Home Page
+*
+* @package WordPress
+* @subpackage Twenty_Fourteen
+* @since Twenty Fourteen 1.0
+*/
+?>
+<?php
+get_header();
+?>
+<div class="wrap">
+    <section class="manifeste">
+        <p>
+            <p>Convaincue de l'impact des pathologies ostéo-articulaires sur l'individu et la société, <strong>la Fondation MOVEO a pour vocation de moderniser leur traitement en y intégrant les nouvelles technologies</strong> afin de diminuer le risque d'erreur humaine et d'améliorer la performance médicale à chaque étape de la prise en charge du patient.</p>
 
-		<?php } ?>
-		
-		<?php /* The Loop — with comments! */ ?>
-		<?php while ( have_posts() ) : the_post() ?>
+        <p><a class="more" href="/fondation/missions">En savoir plus</a></p>
+    </section>
+    <?php
+    the_post();
+    $post = get_post();
+    ?>
+    <section class="actus">
+        <img src="<?php echo get_template_directory_uri(); ?>/img/actu2.png" alt="Occulus Rift" class="pull-left" />
+        <div>
+            <h2>Actualités</h2>
+            <p>
+                <strong><?php the_title(); ?></strong>
+            </p>
+            <p>
+                <?php the_content( __( 'En savoir plus', 'hbd-theme' )  ); ?>
+            </p>
+            <p>
+                <a href="http://youtu.be/VU_L6x1eIzY" class="more">Voir le reportage</a>
+                <a href="/projets/realite-virtuelle" class="more">Voir la page projet (nouvelle vidéo à télécharger)</a>
+            </p>
+        </div>
+    </section>
+    <section class="projets">
+        <h2>Nos projets</h2>
 
-		<?php /* Create a div with a unique ID thanks to the_ID() and semantic classes with post_class() */ ?>
-		                <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-		<?php /* an h2 title */ ?>
-		                    <h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( __('Permalink to %s', 'hbd-theme'), the_title_attribute('echo=0') ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+            <div class="row">
+                <div class="col-sm-4 col-xs-4">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/gopro.png" alt="Dr. Gregory équipé d'une GoPro" />
+                    <p>
+                        Diminuer le risque d&#039;erreur humaine en chirurgie
+                    </p>
+                    <a href="/projets/realite-augmentee" class="more">En savoir plus</a>
+                </div>
+                <div class="col-sm-4 col-xs-4">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/bdd.png" alt="Base de données" />
+                    <p>
+                       Améliorer le diagnostic et le suivi des patients
+                    </p>
+                    <a href="/projets/base-de-donnees" class="more">En savoir plus</a>
+                </div>
+                <div class="col-sm-4 col-xs-4">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/formation.png" alt="Formation" />
+                    <p>
+                        Améliorer la formation et le training des chirurgiens
+                    </p>
+                    <a href="/projets/realite-virtuelle" class="more">En savoir plus</a>
+                </div>
+            </div>
+    </section>
+    <section class="partenaires">
+        <h2 class="pull-right">Ils nous soutiennent </h2>
 
-		<?php /* Microformatted, translatable post meta */ ?>
-		                    <div class="entry-meta">
-		                        <span class="meta-prep meta-prep-author"><?php _e('By ', 'hbd-theme'); ?></span>
-		                        <span class="author vcard"><a class="url fn n" href="<?php echo get_author_link( false, $authordata->ID, $authordata->user_nicename ); ?>" title="<?php printf( __( 'View all posts by %s', 'hbd-theme' ), $authordata->display_name ); ?>"><?php the_author(); ?></a></span>
-		                        <span class="meta-sep"> | </span>
-		                        <span class="meta-prep meta-prep-entry-date"><?php _e('Published ', 'hbd-theme'); ?></span>
-		                        <span class="entry-date"><abbr class="published" title="<?php the_time('Y-m-d\TH:i:sO') ?>"><?php the_time( get_option( 'date_format' ) ); ?></abbr></span>
-		                        <?php edit_post_link( __( 'Edit', 'hbd-theme' ), "<span class=\"meta-sep\">|</span>\n\t\t\t\t\t\t<span class=\"edit-link\">", "</span>\n\t\t\t\t\t" ) ?>
-		                    </div><!-- .entry-meta -->
-
-		<?php /* The entry content */ ?>
-		                    <div class="entry-content">
-		<?php the_content( __( 'Continue reading <span class="meta-nav">&raquo;</span>', 'hbd-theme' )  ); ?>
-		<?php wp_link_pages('before=<div class="page-link">' . __( 'Pages:', 'hbd-theme' ) . '&after=</div>') ?>
-		                    </div><!-- .entry-content -->
-
-		<?php /* Microformatted category and tag links along with a comments link */ ?>
-		                    <div class="entry-utility">
-		                        <span class="cat-links"><span class="entry-utility-prep entry-utility-prep-cat-links"><?php _e( 'Posted in ', 'hbd-theme' ); ?></span><?php echo get_the_category_list(', '); ?></span>
-		                        <span class="meta-sep"> | </span>
-		                        <?php the_tags( '<span class="tag-links"><span class="entry-utility-prep entry-utility-prep-tag-links">' . __('Tagged ', 'hbd-theme' ) . '</span>', ", ", "</span>\n\t\t\t\t\t\t<span class=\"meta-sep\">|</span>\n" ) ?>
-		                        <span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'hbd-theme' ), __( '1 Comment', 'hbd-theme' ), __( '% Comments', 'hbd-theme' ) ) ?></span>
-		                        <?php edit_post_link( __( 'Edit', 'hbd-theme' ), "<span class=\"meta-sep\">|</span>\n\t\t\t\t\t\t<span class=\"edit-link\">", "</span>\n\t\t\t\t\t\n" ) ?>
-		                    </div><!-- #entry-utility -->
-		                </div><!-- #post-<?php the_ID(); ?> -->
-
-		<?php /* Close up the post div and then end the loop with endwhile */ ?>      
-
-		<?php endwhile; ?>
-		
-		<?php /* Bottom post navigation */ ?>
-		<?php global $wp_query; $total_pages = $wp_query->max_num_pages; if ( $total_pages > 1 ) { ?>
-		                <div id="nav-below" class="navigation">
-		                    <?php next_posts_link(__( '<span class="meta-nav">&laquo;</span> Older posts', 'hbd-theme' )) ?> <span style="color: #bbb;">&#8226;</span> <?php previous_posts_link(__( 'Newer posts <span class="meta-nav">&raquo;</span>', 'hbd-theme' )) ?>
-		                </div><!-- #nav-below -->
-		<?php } ?>
-    </div><!-- #content -->
-
-	<?php get_sidebar(); ?>
- 
-</div><!-- #container -->
- 
+        <p class="text-center">
+            <img src="<?php echo get_template_directory_uri(); ?>/img/partenaires.png" alt="Partenaires" />
+        </p>
+    </section>
+</div>
 <?php get_footer(); ?>
