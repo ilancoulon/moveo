@@ -33,5 +33,13 @@
     <div id="navigation">
         <nav>
             <?php wp_nav_menu( array( 'sort_column' => 'menu_order') ); ?>
+            <div class="pull-right" style="position: relative; bottom: 40px; right: 20px;">
+                <a href="http://www.fondation-moveo.fr">
+                    <img title="Version française" alt="Version française" src="<?php echo get_template_directory_uri(); ?>/img/fr.png"></img>
+                </a>
+                <a href="http://www.fondation-moveo.com">
+                    <img title="English version" alt="English version" src="<?php echo get_template_directory_uri(); ?>/img/en.png"></img>
+                </a>
+            </div>
         </nav>
     </div>
