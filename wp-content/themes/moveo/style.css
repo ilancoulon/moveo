@@ -387,6 +387,7 @@ a.more {
     background-position: left;
     background-image: url('img/fleche.png');
     padding-left: 20px;
+    overflow: hidden;
 }
 
 .ariane a {
