@@ -145,17 +145,15 @@ nav li ul {
     position: absolute;
     left: -999em;
     line-height: initial;
+    height: 40px;
     width: 400px;
+    white-space: nowrap;
     border-bottom: none;
     background: transparent;
 }
 nav li:hover ul {
     left: -140px;
     z-index: 20;
-}
-
-nav li#menu_projets:hover ul {
-    left: -160px;
 }
 
 nav li ul li
