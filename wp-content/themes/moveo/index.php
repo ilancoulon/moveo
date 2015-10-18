@@ -20,9 +20,12 @@ get_header();
     <?php
     the_post();
     $post = get_post();
+    $imgUrl = get_post_meta($post->ID, 'image_miniature_url', true);
+    $link = get_post_meta($post->ID, 'lien', true);
+    $label = get_post_meta($post->ID, 'label', true);
     ?>
     <section class="actus">
-        <img src="<?php echo get_template_directory_uri(); ?>/img/actu2.png" alt="Occulus Rift" class="pull-left" />
+        <img src="<?php echo $imgUrl; ?>" class="pull-left" />
         <div>
             <h2>Actualités</h2>
             <p>
@@ -32,8 +35,7 @@ get_header();
                 <?php the_content( __( 'En savoir plus', 'hbd-theme' )  ); ?>
             </p>
             <p>
-                <a href="http://youtu.be/VU_L6x1eIzY" class="more">Voir le reportage</a>
-                <a href="/projets/realite-virtuelle" class="more">Voir la page projet (nouvelle vidéo à télécharger)</a>
+                <a href="<?php echo $link; ?>" class="more"><?php echo $label; ?></a>
             </p>
         </div>
     </section>
