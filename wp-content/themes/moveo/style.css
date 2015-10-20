@@ -378,7 +378,7 @@ section.page img.rect-left {
     float: left;
 }
 
-a.more {
+a.more, .linkMore a {
     display: block;
     color: #fc5964;
     background-repeat: no-repeat;
@@ -443,4 +443,24 @@ footer {
 footer .warp div {
     float: right;
     line-height: 25px;
+}
+
+
+
+
+
+
+/* WORDPRESS SPECIAL */
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.alignleft {
+	float: left;
+}
+
+.alignright {
+	float: right;
 }
