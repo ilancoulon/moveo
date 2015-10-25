@@ -194,4 +194,13 @@
 	    add_editor_style( 'editor-style.css' );
 	}
 	add_action( 'admin_init', 'my_theme_add_editor_styles' );
+
+	if (function_exists('add_theme_support')) {
+		add_theme_support('post-thumbnails');
+	}
+
+	function my_add_excerpts_to_pages() {
+	     add_post_type_support( 'page', 'excerpt' );
+	}
+	add_action( 'init', 'my_add_excerpts_to_pages' );
 ?>

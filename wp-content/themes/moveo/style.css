@@ -49,6 +49,11 @@ h3 {
     margin-left: 10px;
     font-size: 20px;
 }
+h4 {
+    font-family: 'Champagne&LimousinesBold', Arial;
+    text-transform: uppercase;
+    font-size: 18px;
+}
 a {
     color: #27a387;
     text-decoration: none;
