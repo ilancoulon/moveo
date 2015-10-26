@@ -244,7 +244,7 @@ nav li ul li a:hover {
     }
     .page img.projet {
         display: block;
-        clip: rect(0, 555px, 720px, 207px); /* rect(haut, droite, bas, gauche) */
+        clip: rect(0, 350px, 720px, 0); /* rect(haut, droite, bas, gauche) */
         top: 40px;
         left: -155px;
     }
