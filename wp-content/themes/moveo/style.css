@@ -246,7 +246,7 @@ nav li ul li a:hover {
         display: block;
         clip: rect(0, 350px, 720px, 0); /* rect(haut, droite, bas, gauche) */
         top: 40px;
-        left: -155px;
+        left: 30px;
     }
     .page .wrap.main.containsBorderImage::before {
         content: "";
