@@ -23,10 +23,11 @@ $posts = get_posts();
     $link = get_post_meta($post->ID, 'lien', true);
     $label = get_post_meta($post->ID, 'label', true);
       ?>
-      <p><?php echo apply_filters( 'the_date', $post->post_date ); ?></p>
+      <p><?php echo apply_filters( 'get_the_date', $post->post_date ); ?></p>
       <h3><?php echo apply_filters( 'the_title', $post->post_title ); ?></h3>
       <p><?php echo apply_filters( 'the_content', $post->post_content ); ?></h3>
       <a href="<?php echo $link; ?>" class="more"><?php echo $label; ?></a>
+      <br/><br/>
   <?php } ?>
   </div>
 <?php get_footer(); ?>
