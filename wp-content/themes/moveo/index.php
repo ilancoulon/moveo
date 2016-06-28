@@ -13,7 +13,19 @@ get_header();
 <div class="wrap">
     <section class="manifeste">
         <p>
-            <p>Convaincue de l'impact des pathologies ostéo-articulaires sur l'individu et la société, <strong>la Fondation MOVEO a pour vocation de moderniser leur traitement en y intégrant les nouvelles technologies</strong> afin de diminuer le risque d'erreur humaine et d'améliorer la performance médicale à chaque étape de la prise en charge du patient.</p>
+            <p>
+                La prochaine révolution médicale sera numérique. Il s’agit d’un enjeu médical mais également
+
+économique puisque la santé représente 10% du PIB des pays industrialisés. La <strong>Fondation MOVEO</strong> a
+
+pour objectif d’accélérer la révolution numérique en chirurgie, et souhaite pour cela créer un institut
+
+public de recherche et de formation en chirurgie unique au monde : l’Institut MOVEO se veut être un
+
+carrefour entre le monde du soin, de la recherche et de l’industrie.
+                
+                
+            </p>
 
         <p><a class="more" href="/fondation/missions">En savoir plus</a></p>
     </section>
