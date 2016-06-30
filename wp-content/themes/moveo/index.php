@@ -65,7 +65,7 @@ carrefour entre le monde du soin, de la recherche et de l’industrie.
                 <div class="col-sm-4 col-xs-4">
                     <img src="<?php echo get_template_directory_uri(); ?>/img/bulle-institut.png" alt="Base de données" />
                     <p>
-                       Créer l'Institut de recherche Moveo
+                       Financer l'Institut de recherche Moveo
                     </p>
                     <a href="/projets/institut-moveo/" class="more">En savoir plus</a>
                 </div>
