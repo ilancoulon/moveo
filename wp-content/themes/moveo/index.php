@@ -63,11 +63,11 @@ carrefour entre le monde du soin, de la recherche et de l’industrie.
                     <a href="/projets/realite-augmentee" class="more">En savoir plus</a>
                 </div>
                 <div class="col-sm-4 col-xs-4">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/bdd.png" alt="Base de données" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/bulle-institut.png" alt="Base de données" />
                     <p>
-                       Améliorer le diagnostic et le suivi des patients
+                       Créer l'Institut de recherche Moveo
                     </p>
-                    <a href="/projets/base-de-donnees" class="more">En savoir plus</a>
+                    <a href="/projets/institut-moveo/" class="more">En savoir plus</a>
                 </div>
                 <div class="col-sm-4 col-xs-4">
                     <img src="<?php echo get_template_directory_uri(); ?>/img/formation.png" alt="Formation" />
